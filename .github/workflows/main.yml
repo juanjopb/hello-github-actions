@@ -4,8 +4,9 @@ jobs:
   build:
     name: Hello world action
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/first-action'
     steps:
       - uses: actions/checkout@v1
       - uses: ./action-a
         with:
-          MY_NAME: "Juanita"
+          MY_NAME: "Juanita on main"
